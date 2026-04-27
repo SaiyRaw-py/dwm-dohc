@@ -2,7 +2,7 @@
 
 /* appearance */
 /* Set this to your monitor's refresh rate (e.g., 60, 120, 144, 165) */
-static const unsigned int refresh_rate = 60;    /* matches dwm's mouse event processing to your monitor's refresh rate for smoother window interactions */
+static const unsigned int refresh_rate = 90;    /* matches dwm's mouse event processing to your monitor's refresh rate for smoother window interactions */
 static const unsigned int enable_noborder = 1;  /* toggles noborder feature (0=disabled, 1=enabled) */
 static const int cursorwarp         = 1;        /* 1 means warp cursor to center of focused window/monitor */
 static const unsigned int snap      = 32;       /* snap pixel */

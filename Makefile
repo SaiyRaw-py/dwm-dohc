@@ -49,12 +49,13 @@ install: all
 	for dir in config/*/; do \
 		dst=${CFG_DIR}/$$(basename "$$dir"); \
 		[ -L "$$dst" ] && rm -f "$$dst"; \
-		cp -rfL --remove-destination "$$dir" "$$dst"; \
+		mkdir -p "$$dst"; \
+		cp -rfL --remove-destination "$$dir"* "$$dst"/; \
 	done
 	@echo "==> Installing scripts to PATH..."
 	for f in scripts/*; do \
 		case "$$(basename $$f)" in autostart*) continue;; esac; \
-		install -Dm755 "$$f" ${DESTDIR}${PREFIX}/bin/$$(basename $$f); \
+		install -Dm755 "$$f" ${USER_HOME}/.local/bin/$$(basename $$f); \
 	done
 	@echo "==> Seeding user config (skipping existing files)..."
 	mkdir -p ${CFG_DIR}/dwm-dohc
